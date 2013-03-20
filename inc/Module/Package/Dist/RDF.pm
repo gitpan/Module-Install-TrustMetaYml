@@ -6,13 +6,13 @@ my $explanation = q<
 	bundled with the distribution.
 >;
 
-use 5.008003;
-use base qw[Module::Package::Dist];
+use 5.005;
 use strict;
 
 BEGIN {
 	$Module::Package::Dist::RDF::AUTHORITY = 'cpan:TOBYINK';
-	$Module::Package::Dist::RDF::VERSION   = '0.006';
+	$Module::Package::Dist::RDF::VERSION   = '0.012';
+	@Module::Package::Dist::RDF::ISA       = 'Module::Package::Dist';
 }
 
 sub _main
@@ -24,12 +24,23 @@ sub _main
 
 {
 	package Module::Package::Dist::RDF::standard;
-	use 5.008003;
+	use 5.005;
 	use strict;
 	BEGIN {
 		$Module::Package::Dist::RDF::standard::AUTHORITY = 'cpan:TOBYINK';
-		$Module::Package::Dist::RDF::standard::VERSION   = '0.006';
+		$Module::Package::Dist::RDF::standard::VERSION   = '0.012';
 		@Module::Package::Dist::RDF::standard::ISA       = 'Module::Package::Dist::RDF';
+	}
+}
+
+{
+	package Module::Package::Dist::RDF::tobyink;
+	use 5.005;
+	use strict;
+	BEGIN {
+		$Module::Package::Dist::RDF::tobyink::AUTHORITY = 'cpan:TOBYINK';
+		$Module::Package::Dist::RDF::tobyink::VERSION   = '0.012';
+		@Module::Package::Dist::RDF::tobyink::ISA       = 'Module::Package::Dist::RDF';
 	}
 }
 
